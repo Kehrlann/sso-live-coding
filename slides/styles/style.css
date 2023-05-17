@@ -1,0 +1,34 @@
+:root {
+  --slidev-slide-container-background: white;
+}
+
+html {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.slidev-layout {
+  a {
+    border: none;
+  }
+
+  a:hover {
+    border: none;
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  &[layout="image"] {
+    background-size: contain !important;
+  }
+}
+
+
+/* Used by the Who-am-I slide */
+.smaller {
+  font-size: .9em;
+}
+
