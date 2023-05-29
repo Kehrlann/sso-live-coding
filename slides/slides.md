@@ -7,6 +7,7 @@ transition: none
 # use UnoCSS
 css: unocss
 aspectRatio: "16/10"
+colorSchema: "light"
 hideInToc: true
 ---
 
@@ -77,7 +78,6 @@ level: 2
 - Un ensemble de spécifications
   - **https://oauth.net/specs/** (parfois un peu ... rudes ...)
 
-Notez: ça ne parle pas d'**identité**...
 
 ---
 title: OAuth2 - Exemple
@@ -101,6 +101,14 @@ autorise
 (sans partager son 🔐 mot de passe Google)
 
 ---
+title: OAuth2
+layout: fact
+level: 3
+---
+
+## Notez: ça ne parle pas d'**identité**...
+
+---
 title: OpenID Connect
 level: 2
 ---
@@ -110,7 +118,7 @@ level: 2
 <br>
 
 - Un framework d' *[🇬🇧 Authentication]*
-  - But: fournir à des **applications** tierces des données sur son identités détenues par un **provider
+  - But: fournir à des **applications** tierces des données sur son identité détenues par un **provider
 d'identité**.
   - Et donc faire du **Single-Sign-On**  (SSO)
 - Basé sur OAuth2, avec des jetons appelés `id_token`
@@ -119,51 +127,52 @@ d'identité**.
 
 ---
 layout: section
-title: "Pourquoi et comment?"
+title: "Pourquoi et comment, en images"
+level: 1
 ---
 
 # Pourquoi et comment?
 
 ---
 layout: image
-title: "Don't do this"
 image: /sso-1-give-password.png
+hideInToc: true
 ---
 
 ---
 layout: image
-title: "Don't do this - bad idea"
 image: /sso-2-give-password-bad-idea.png
+hideInToc: true
 ---
 
 ---
 layout: image
-title: "High level authorization_code overview"
 image: /sso-3-high-level-authorization-code.png
+hideInToc: true
 ---
 
 ---
 layout: image
-title: "High level overview - token types"
 image: /sso-4-high-level-token-types.png
+hideInToc: true
 ---
 
 ---
 layout: image
-title: "High level authorization_code overview"
 image: /sso-3-high-level-authorization-code.png
+hideInToc: true
 ---
 
 ---
 layout: image
-title: "Closer look"
 image: /sso-5-more-details-oauth.png
+hideInToc: true
 ---
 
 ---
 layout: image
-title: "Just SSO"
 image: /sso-6-just-sso.png
+hideInToc: true
 ---
 
 
@@ -175,3 +184,48 @@ title: Live-coding
 # ~~~ Let's code!
 
 <img src="/cat-code.gif" style="width: 600px; text-align:center;" />
+
+---
+layout: image-right
+image: /no-idea.jpg
+hideInToc: true
+---
+
+# Pas en prod
+
+<br>
+
+Ce live-coding a été réalisé par un professionel<sup>1</sup>. N'essayez surtout
+pas de le reproduire en prod.
+
+(Sur `localhost`, faites vous plaisir.)
+
+<sup>1</sup> ou pas 🥸
+
+---
+layout: default
+hideInToc: true
+---
+
+# Références
+
+<br>
+
+### **https://github.com/Kehrlann/sso-live-coding**
+
+<br>
+
+- <logos-twitter /> @Kehrlann
+- <logos-firefox /> https://garnier.wf/
+- <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
+
+
+---
+layout: image
+hideInToc: true
+image: /meet-me.jpg
+class: end
+---
+
+# **Merci 😊**
+

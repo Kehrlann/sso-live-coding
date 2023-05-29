@@ -24,6 +24,14 @@ html {
   &[layout="image"] {
     background-size: contain !important;
   }
+
+  &.end {
+    text-align: center;
+
+    & > h1 {
+      font-size: 3rem;
+    }
+  }
 }
 
 
