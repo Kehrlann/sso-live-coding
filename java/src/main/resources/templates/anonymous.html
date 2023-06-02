@@ -6,12 +6,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SSO demo</title>
+    <link rel="stylesheet" href="/style.css"/>
 </head>
+
 <body>
-    <h1>SSO demo!</h1>
-    <p>You are not authenticated</p>
-    <form action="/login" method="POST">
-        <button type="submit">Login - Hardcoded user</button>
+<div class="card">
+    <div class="header">
+        <h1>SSO demo!</h1>
+    </div>
+    <div class="content">
+        <p>You are not authenticated</p>
+    </div>
+    <form action="/login" method="POST" class="footer">
+        <h3>Login with:</h3>
+        <button type="submit">Hardcoded user</button>
     </form>
+</div>
 </body>
 </html>
