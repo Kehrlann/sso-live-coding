@@ -1,15 +1,48 @@
 package wf.garnier.sso.demo;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Controller
 public class HelloController {
+
+    public static final String AUTHORIZATION_SUCCESS_PATH = "/oauth2/callback";
+
+    static final String REDIRECT_URI = "http://localhost:8080" + AUTHORIZATION_SUCCESS_PATH;
+
+    private final RestTemplate restTemplate;
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+
+    @Value("${sso.client_id}")
+    private String clientId;
+
+    @Value("${sso.client_secret}")
+    private String clientSecret;
+
+    private static final String authorizationUri = "https://accounts.google.com/o/oauth2/v2/auth";
+
+    private static final String tokenUri = "https://oauth2.googleapis.com/token";
+
+    public HelloController(RestTemplateBuilder restTemplateBuilder) {
+        this.restTemplate = restTemplateBuilder.build();
+    }
 
     @GetMapping("/")
     public String index(HttpServletRequest request, Model model) {
@@ -19,6 +52,12 @@ public class HelloController {
             model.addAttribute("attributes", session.getAttribute("attributes"));
             return "authenticated";
         } else {
+            var loginUri = UriComponentsBuilder.fromHttpUrl(authorizationUri)
+                    .queryParam("client_id", clientId)
+                    .queryParam("redirect_uri", REDIRECT_URI)
+                    .queryParam("scope", "openid profile email")
+                    .queryParam("response_type", "code");
+            model.addAttribute("loginUri", loginUri.toUriString());
             return "anonymous";
         }
     }
@@ -47,5 +86,42 @@ public class HelloController {
             session.removeAttribute("attributes");
         }
         return "redirect:/";
+    }
+
+    @GetMapping(AUTHORIZATION_SUCCESS_PATH)
+    public String authorized(@RequestParam("code") String code, HttpServletRequest request) throws IOException {
+        System.out.println("Got a code: " + code);
+        var tokenRequest = RequestEntity.post(tokenUri)
+                .header("Authorization", "Basic " + getCredentials())
+                .body(
+                        Map.of(
+                                "redirect_uri", REDIRECT_URI,
+                                "grant_type", "authorization_code",
+                                "code", code
+                        )
+                );
+        var type = new ParameterizedTypeReference<Map<String, Object>>() {
+        };
+        var resp = restTemplate.exchange(tokenRequest, type);
+        var body = resp.getBody();
+        var idToken = decodeIdToken((String) body.get("id_token"));
+        System.out.println(idToken);
+
+        var session = request.getSession(true);
+        session.setAttribute("username", idToken.get("email"));
+        request.getSession().setAttribute("attributes", idToken);
+
+        return "redirect:/";
+    }
+
+    private Map<String, Object> decodeIdToken(String idToken) throws IOException {
+        var parts = idToken.split("\\.");
+        var body = Base64.getDecoder().decode(parts[1]);
+        return objectMapper.readValue(body, Map.class);
+    }
+
+    private String getCredentials() {
+        var credsString = "%s:%s".formatted(clientId, clientSecret);
+        return Base64.getEncoder().encodeToString(credsString.getBytes());
     }
 }
