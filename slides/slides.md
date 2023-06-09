@@ -6,7 +6,7 @@ lineNumbers: true
 transition: none
 # use UnoCSS
 css: unocss
-aspectRatio: "16/10"
+aspectRatio: "16/9"
 colorSchema: "light"
 hideInToc: true
 ---
@@ -184,6 +184,24 @@ title: Live-coding
 # ~~~ Let's code!
 
 <img src="/cat-code.gif" style="width: 600px; text-align:center;" />
+
+---
+layout: image
+image: /sso-7-get-code.png
+hideInToc: true
+---
+
+---
+layout: image
+image: /sso-8-redirect.png
+hideInToc: true
+---
+
+---
+layout: image
+image: /sso-9-exchange-token.png
+hideInToc: true
+---
 
 ---
 layout: image-right
