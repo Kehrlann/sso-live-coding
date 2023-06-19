@@ -1,0 +1,12 @@
+<div class="content">
+    <p>Welcome, {{ username }} !</p>
+    <h3>Here's what we know about you:</h3>
+    <ul>
+        {{#each attributes}}
+        <li><span style="font-weight: bold">{{ @key }}</span>: {{ this }}</li>
+        {{/each}}
+    </ul>
+</div>
+<form action="logout" method="POST" class="footer">
+    <button type="submit">Logout</button>
+</form>
