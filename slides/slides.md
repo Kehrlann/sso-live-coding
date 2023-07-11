@@ -231,6 +231,12 @@ hideInToc: true
 
 ### **https://github.com/Kehrlann/sso-live-coding**
 
+<!-- ouch the hack -->
+<div style="float:right; margin-right: 50px; text-align: center;">
+  <img src="/feedback.png" style="margin-bottom: -45px; margin-top: -15px;" >
+  <p style="font-weight: bold;">🎉✨ Feedback 💫🎊</p>
+</div>
+
 <br>
 
 - <logos-twitter /> @Kehrlann
