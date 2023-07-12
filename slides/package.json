@@ -2,7 +2,7 @@
   "name": "sso-live-coding",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base /sso-live-coding/",
     "dev": "slidev --open",
     "export": "slidev export"
   },
