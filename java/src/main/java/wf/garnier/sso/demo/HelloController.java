@@ -116,12 +116,12 @@ public class HelloController {
 
     private Map<String, Object> decodeIdToken(String idToken) throws IOException {
         var parts = idToken.split("\\.");
-        var body = Base64.getDecoder().decode(parts[1]);
+        var body = Base64.getUrlDecoder().decode(parts[1]);
         return objectMapper.readValue(body, Map.class);
     }
 
     private String getCredentials() {
         var credsString = "%s:%s".formatted(clientId, clientSecret);
-        return Base64.getEncoder().encodeToString(credsString.getBytes());
+        return Base64.getUrlEncoder().encodeToString(credsString.getBytes());
     }
 }
