@@ -16,6 +16,7 @@
     "express-session": "^1.17.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "prettier": "^3.0.3"
   }
 }
