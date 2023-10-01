@@ -20,7 +20,8 @@ body {
 
 .header {
     background: #aaa;
-    background-image: url("https://2023.rivieradev.fr/public/images/photos/2018.webp");
+    background-image: url("https://devoxx.be/wp-content/uploads/2023/05/KEYNOTES-1.jpg");
+    background-position-y: center;
     background-size: cover;
     display: inline-block;
     width: 100%;
@@ -47,7 +48,7 @@ button, .button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    background: green;
+    background: #722893;
     font-weight: bold;
     text-decoration: none;
     color: white;
