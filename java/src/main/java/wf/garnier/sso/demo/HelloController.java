@@ -7,15 +7,12 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @Controller
@@ -25,7 +22,7 @@ public class HelloController {
 
     static final String REDIRECT_URI = "http://localhost:8080" + AUTHORIZATION_SUCCESS_PATH;
 
-    private final RestTemplate restTemplate;
+    private final RestClient restClient;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -40,8 +37,8 @@ public class HelloController {
 
     private static final String tokenUri = "https://oauth2.googleapis.com/token";
 
-    public HelloController(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplate = restTemplateBuilder.build();
+    public HelloController(RestClient.Builder builder) {
+        this.restClient = builder.build();
     }
 
     @GetMapping("/")
@@ -91,7 +88,9 @@ public class HelloController {
     @GetMapping(AUTHORIZATION_SUCCESS_PATH)
     public String authorized(@RequestParam("code") String code, HttpServletRequest request) throws IOException {
         System.out.println("Got a code: " + code);
-        var tokenRequest = RequestEntity.post(tokenUri)
+        var response = this.restClient
+                .post()
+                .uri(tokenUri)
                 .header("Authorization", "Basic " + getCredentials())
                 .body(
                         Map.of(
@@ -99,11 +98,11 @@ public class HelloController {
                                 "grant_type", "authorization_code",
                                 "code", code
                         )
-                );
-        var type = new ParameterizedTypeReference<Map<String, Object>>() {
-        };
-        var resp = restTemplate.exchange(tokenRequest, type);
-        var body = resp.getBody();
+                )
+                .retrieve()
+                .body(String.class);
+        var body = this.objectMapper.readValue(response, Map.class);
+
         var idToken = decodeIdToken((String) body.get("id_token"));
         System.out.println(idToken);
 
