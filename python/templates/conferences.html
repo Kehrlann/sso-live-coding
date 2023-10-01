@@ -15,12 +15,22 @@
         <h1>SSO demo!</h1>
     </div>
     <div class="content">
-        <p>You are not authenticated</p>
+        <p>Conferences</p>
+        {% if error != None %}
+        <h3>Error</h3>
+        <p>{{ error }}</p>
+        {% endif %}
+        
+        {% if conferences %}
+        {% for conference in conferences %}
+        <h3>{{ conference["name"] }}</h3>
+        <p>{{ conference["location"] }}</p>
+        {% endfor %}
+        {% endif %}
     </div>
-    <form action="/login" method="POST" class="footer">
-        <h3>Login with:</h3>
-        <button type="submit">Hardcoded user</button>
-    </form>
+    <div class="footer">
+        <a href="/" class="button">Back</a>
+    </div>
 </div>
 </body>
 </html>
