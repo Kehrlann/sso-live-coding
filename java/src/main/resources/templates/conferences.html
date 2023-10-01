@@ -15,12 +15,19 @@
         <h1>SSO demo!</h1>
     </div>
     <div class="content">
-        <p>You are not authenticated</p>
+        <p>Conferences</p>
+        <th:block th:if="${error != null}">
+            <h3>Error</h3>
+            <p th:text="${error}"></p>
+        </th:block>
+        <th:block th:each="conference: ${conferences}">
+            <h3 th:text="${conference.get('name')}"></h3>
+            <p th:text="${conference.get('location')}"></p>
+        </th:block>
     </div>
-    <form action="/login" method="POST" class="footer">
-        <h3>Login with:</h3>
-        <button type="submit">Hardcoded user</button>
-    </form>
+    <div class="footer">
+        <a href="/" class="button">Back</a>
+    </div>
 </div>
 </body>
 </html>
