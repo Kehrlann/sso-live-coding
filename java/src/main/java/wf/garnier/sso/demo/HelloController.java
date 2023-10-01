@@ -102,6 +102,7 @@ public class HelloController {
                 .retrieve()
                 .body(String.class);
         var body = this.objectMapper.readValue(response, Map.class);
+        System.out.println(body.get("id_token"));
 
         var idToken = decodeIdToken((String) body.get("id_token"));
         System.out.println(idToken);

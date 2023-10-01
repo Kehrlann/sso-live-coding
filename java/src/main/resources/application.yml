@@ -2,7 +2,3 @@ server:
   servlet:
     session:
       tracking-modes: cookie
-
-sso:
-  client_id: "${SSO_CLIENT_ID}"
-  client_secret: "${SSO_CLIENT_SECRET}"
