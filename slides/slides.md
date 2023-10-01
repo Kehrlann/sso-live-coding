@@ -192,13 +192,25 @@ hideInToc: true
 
 ---
 layout: image
-image: /sso-8-redirect.png
+image: /sso-8-code-where.png
 hideInToc: true
 ---
 
 ---
 layout: image
-image: /sso-9-exchange-token.png
+image: /sso-9-authorization-uri.png
+hideInToc: true
+---
+
+---
+layout: image
+image: /sso-10-redirect.png
+hideInToc: true
+---
+
+---
+layout: image
+image: /sso-11-exchange-token.png
 hideInToc: true
 ---
 
