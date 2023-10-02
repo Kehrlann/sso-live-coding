@@ -215,6 +215,18 @@ hideInToc: true
 ---
 
 ---
+layout: image
+image: /sso-12-jwt.png
+hideInToc: true
+---
+
+---
+layout: image
+image: /sso-13-access-token.png
+hideInToc: true
+---
+
+---
 layout: image-right
 image: /no-idea.jpg
 hideInToc: true
