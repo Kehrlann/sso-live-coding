@@ -1,10 +1,11 @@
 import json
 from uuid import uuid4
 from flask import Flask, render_template, redirect, url_for, session, request
-from requests import post
+from requests import post, get
 from urllib.parse import urlencode
 from base64 import urlsafe_b64decode
 from dotenv import dotenv_values
+from uuid import uuid4
 
 config = dotenv_values("../.env")
 
@@ -32,10 +33,11 @@ def hello():
             "client_id": client_id,
             "redirect_uri": redirect_uri,
             "scope": "openid profile email",
+            "state": uuid4()
         }
     )
 
-    login_uri = "https://accounts.google.com/o/oauth2/v2/auth?" + encodedParams
+    login_uri = "https://dev-51438889.okta.com/oauth2/default/v1/authorize?" + encodedParams
     return render_template("anonymous.html", login_uri=login_uri)
 
 
@@ -61,7 +63,7 @@ def logout():
 def callback():
     code = request.args.get("code")
     resp = post(
-        "https://oauth2.googleapis.com/token",
+        "https://dev-51438889.okta.com/oauth2/default/v1/token",
         data={
             "grant_type": "authorization_code",
             "code": code,
@@ -69,12 +71,31 @@ def callback():
         },
         auth=(client_id, client_secret),
     ).json()
+    print(resp)
     payload = resp["id_token"].split(".")[1]
-    decoded = urlsafe_b64decode(payload)
+    decoded = urlsafe_b64decode(payload + "===")
     claims = json.loads(decoded)
     session["username"] = claims["email"]
     session["attributes"] = claims
+    session["access_token"] = resp["access_token"]
     return redirect(url_for("hello"))
+
+@app.route("/conferences")
+def conferences():
+    error = None
+    conferences = []
+
+    response = get(
+        "http://localhost:8081/conferences",
+        headers={"authorization": "Bearer " + session.get("access_token", "NOT-A-VALID-TOKEN")}
+    )
+    if response.status_code != 200:
+        error = response.text
+    else:
+        conferences = response.json()
+
+    return render_template("conferences.html", conferences=conferences, error=error)
+
 
 
 if __name__ == "__main__":
