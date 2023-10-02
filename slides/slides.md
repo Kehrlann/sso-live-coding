@@ -253,8 +253,7 @@ hideInToc: true
 <!-- ouch the hack -->
 <!-- https://mobile.devoxx.com/events/dvbe23/talks/2943/details -->
 <div style="float:right; margin-right: 50px; text-align: center;">
-  <img src="/feedback.png" style="margin-bottom: -45px; margin-top: -15px;" >
-  <p style="font-weight: bold;">🎉✨ Feedback 💫🎊</p>
+  <img src="/qr-code.png" style="margin-bottom: -45px; margin-top: -15px;" >
 </div>
 
 <br>
