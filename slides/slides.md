@@ -22,7 +22,7 @@ hideInToc: true
 Devoxx Belgium, 2023-10-05
 
 <!-- 
-presenter notes go here 
+presenter notes go here
 TODO: splash image
 -->
 
@@ -106,7 +106,7 @@ layout: fact
 level: 3
 ---
 
-## Note: we're not saying anything about **identity**...
+## Notice: we're not saying anything about **identity**...
 
 ---
 title: OpenID Connect
@@ -174,7 +174,6 @@ image: /sso-6-just-sso.png
 hideInToc: true
 ---
 
-
 ---
 layout: center
 title: Live-coding
@@ -183,6 +182,19 @@ title: Live-coding
 # ~~~ Let's code!
 
 <img src="/cat-code.gif" style="width: 600px; text-align:center;" />
+
+---
+layout: image-right
+image: /no-idea.jpg
+hideInToc: true
+---
+
+## 🚨**WARNING**🚨
+
+<br>The stunts in this live-coding are performed by a professional<sup>1</sup>. Do **NOT** push any
+of this code to production. **EVER**. Use a library.
+
+<br><sup>1</sup> *dubious claim*
 
 ---
 layout: image
@@ -228,16 +240,13 @@ hideInToc: true
 
 ---
 layout: image-right
-image: /no-idea.jpg
+image: /safety-cat.jpg
 hideInToc: true
 ---
 
-## 🚨**WARNING**🚨
+## Remember!
 
-<br>The stunts in this live-coding were performed by a professional<sup>1</sup>. Do **NOT** push any of
-this code to production. **EVER**. Use a library.
-
-<br><sup>1</sup> *dubious claim*
+<br>Don't do this. Use a library.
 
 ---
 layout: default
