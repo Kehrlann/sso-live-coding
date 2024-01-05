@@ -58,7 +58,7 @@ public class HelloController {
             var loginUri = UriComponentsBuilder.fromHttpUrl(authorizationUri)
                     .queryParam("client_id", clientId)
                     .queryParam("redirect_uri", REDIRECT_URI)
-                    .queryParam("scope", "openid profile email test.scope")
+                    .queryParam("scope", "openid profile email conference.list")
                     .queryParam("response_type", "code")
                     .queryParam("state", UUID.randomUUID().toString());
             model.addAttribute("loginUri", loginUri.toUriString());
