@@ -10,6 +10,7 @@ import java.time.ZoneId;
 import java.util.Base64;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
@@ -63,6 +64,9 @@ class ConferenceController {
         if (expiry.isBefore(LocalDateTime.now())) {
             throw new RuntimeException("Expired access_token");
         }
+        if (!decodedToken.payload().scopes().contains("conference.list")) {
+            throw new RuntimeException("Missing scope: conference.list");
+        }
 
         var userId = decodedToken.payload().sub();
 
@@ -86,7 +90,7 @@ class ConferenceController {
     record Jwt(Header header, Payload payload, byte[] signedData, byte[] signature) {
     }
 
-    record Payload(String sub, Long exp) {
+    record Payload(String sub, @JsonProperty("scp") List<String> scopes, Long exp) {
     }
 
     record Header(String kid) {
