@@ -32,11 +32,10 @@ public class HelloController {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-
-    @Value("${sso.client_id}")
+    @Value("${SSO_CLIENT_ID}")
     private String clientId;
 
-    @Value("${sso.client_secret}")
+    @Value("${SSO_CLIENT_SECRET}")
     private String clientSecret;
 
     private static final String authorizationUri = "https://dev-51438889.okta.com/oauth2/default/v1/authorize";
