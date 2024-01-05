@@ -11,20 +11,16 @@ colorSchema: "light"
 hideInToc: true
 ---
 
-# Live-coding SSO
-## (from scratch!)
+# SSO en live-coding
+## (sans framework)
 
 <br>
 <br>
 
 ### Daniel Garnier-Moiroux
 
-Devoxx Belgium, 2023-10-05
+SnowCamp, 2024-02-01
 
-<!-- 
-presenter notes go here
-TODO: splash image
--->
 
 ---
 layout: image-right
@@ -39,9 +35,9 @@ class: smaller
 
 Software Engineer
 
-- <logos-spring-icon /> VMWare+Tanzu+Spring
-- <logos-twitter /> @Kehrlann
+- <logos-spring-icon /> Broadcom+Tanzu+Spring
 - <logos-mastodon-icon /> @Kehrlann@hachyderm.io
+- <logos-twitter /> @Kehrlann
 - <logos-firefox /> https://garnier.wf/
 - <logos-github-icon /> github.com/Kehrlann/
 - <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
@@ -50,19 +46,19 @@ Software Engineer
 hideInToc: true
 ---
 
-# What we'll talk about
+# Le programme
 
 <Toc maxDepth="2"></Toc>
 
 ---
 layout: section
-title: "OAuth2, OpenID: What's that?"
+title: "OAuth2, OpenID: qu'est-ce que c'est?"
 ---
 
 # OAuth2, OpenID
 <br >
 
-## What even is this?
+## C'est quoi, au juste?
 
 ---
 title: OAuth2
@@ -73,32 +69,33 @@ level: 2
 
 <br>
 
-- An *Authorization* framework
-  - Goal: Grant **applications** the **permission** to access **ressources** through **HTTP**.
-- Using *tokens*, in this case `access_token`
-- A long list of specs
-  - **https://oauth.net/specs/** (sometimes a bit ... dry ...)
+- Un framework d' *[🇬🇧 Authorization]*
+  - Pour donner la **permission** à des **applications** d'accéder à des **ressources** via **HTTP**.
+- Via des *jetons* appelés `access_token`
+- Un ensemble de spécifications
+  - **https://oauth.net/specs/** (parfois un peu ... rudes ...)
+
 
 ---
-title: OAuth2 - Example
+title: OAuth2 - Exemple
 level: 3
 ---
 
 # OAuth 2 & 2.1
 
-For example:
+Par exemple:
 
 🧑🏻 **Daniel**
 
-authorizes
+autorise
 
-🖥️ **my-photo-book.example.com**
+🖥️ **mon-album-photo.example.com**
 
-to access his pictures hosted on
+à accéder à ses photos
 
 📸 **Google Photos**
 
-(without sharing his 🔐 Google password)
+(sans partager son 🔐 mot de passe Google)
 
 ---
 title: OAuth2
@@ -106,7 +103,7 @@ layout: fact
 level: 3
 ---
 
-## Notice: we're not saying anything about **identity**...
+## Notez: ça ne parle pas d'**identité** ...
 
 ---
 title: OpenID Connect
@@ -117,20 +114,21 @@ level: 2
 
 <br>
 
-- An *Authentication* framework
-  - Goal: give third-party **applications** identity data managed by an **identity provider**
-  - Therefore enabling **Single-Sign-On** (SSO)
-- Based on OAuth2, this time using `id_token`
-- And of course... specs!
+- Un framework d' *[🇬🇧 Authentication]*
+  - But: fournir à des **applications** tierces des données sur son identité détenues par un **provider
+d'identité**.
+  - Et donc faire du **Single-Sign-On** (SSO)
+- Basé sur OAuth2, avec des jetons appelés `id_token`
+- Et bien sûr... des specs!
   - **https://openid.net/developers/specs/**
 
 ---
 layout: section
-title: "How and why, with images"
+title: "Pourquoi et comment, en images"
 level: 1
 ---
 
-# How and why?
+# Pourquoi et comment?
 
 ---
 layout: image
@@ -179,7 +177,7 @@ layout: center
 title: Live-coding
 ---
 
-# ~~~ Let's code!
+# ~~~ Du code!
 
 <img src="/cat-code.gif" style="width: 600px; text-align:center;" />
 
@@ -191,10 +189,10 @@ hideInToc: true
 
 ## 🚨**WARNING**🚨
 
-<br>The stunts in this live-coding are performed by a professional<sup>1</sup>. Do **NOT** push any
-of this code to production. **EVER**. Use a library.
+<br>Ce live-coding est réalisé par un professionel<sup>1</sup>. N'essayez surtout pas de le
+reproduire en prod.
 
-<br><sup>1</sup> *dubious claim*
+<br><sup>1</sup> ou pas 🥸
 
 ---
 layout: image
@@ -244,9 +242,9 @@ image: /safety-cat.jpg
 hideInToc: true
 ---
 
-## Remember!
+## Rappel!
 
-<br>Don't do this. Use a library.
+<br>Ne faites pas ça! Utilisez une lib.
 
 ---
 layout: default
@@ -267,8 +265,8 @@ hideInToc: true
 
 <br>
 
-- <logos-twitter /> @Kehrlann
 - <logos-mastodon-icon /> @Kehrlann@hachyderm.io
+- <logos-twitter /> @Kehrlann
 - <logos-firefox /> https://garnier.wf/
 - <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
 
@@ -280,5 +278,5 @@ image: /meet-me.jpg
 class: end
 ---
 
-# **Thank you 😊**
+# **Merci 😊**
 
