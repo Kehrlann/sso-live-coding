@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
     loginUri.searchParams.append("client_id", client_id);
     loginUri.searchParams.append("redirect_uri", redirect_uri);
     loginUri.searchParams.append("response_type", "code");
-    loginUri.searchParams.append("scope", "openid email profile test.scope");
+    loginUri.searchParams.append("scope", "openid email profile conference.list");
     loginUri.searchParams.append("state", uuid.v4());
     res.render("anonymous", { loginUri });
   } else {
