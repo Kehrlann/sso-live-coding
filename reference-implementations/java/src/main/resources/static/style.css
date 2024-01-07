@@ -1,0 +1,55 @@
+body {
+    font-family: Metropolis, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    overflow: hidden;
+
+    min-width: 400px;
+    max-width: 750px;
+    min-height: 400px;
+
+    display: grid;
+    grid-template-rows: 100px 1fr auto;
+}
+
+.header {
+    background: #aaa;
+    background-image: url("https://devoxx.be/wp-content/uploads/2023/05/KEYNOTES-1.jpg");
+    background-position-y: center;
+    background-size: cover;
+    display: inline-block;
+    width: 100%;
+    color: white;
+    height: 75px;
+    /*-webkit-text-stroke: .8px black;*/
+}
+
+.header > h1 {
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.content {
+    padding: 0 20px;
+    align-self: start;
+}
+
+.footer {
+    padding: 20px;
+}
+
+button, .button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: #722893;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}

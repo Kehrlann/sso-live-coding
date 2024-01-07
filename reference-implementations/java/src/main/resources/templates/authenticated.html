@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSO demo</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+<div class="card">
+    <div class="header">
+        <h1>SSO demo!</h1>
+    </div>
+    <div class="content">
+        <p>Welcome, <span th:text="${username}"></span> !</p>
+        <h3>Here's what we know about you:</h3>
+        <ul>
+            <li th:each="attribute: ${attributes}"><span th:text="${attribute.key}" style="font-weight: bold"></span>: <span th:text="${attribute.value}"></span></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <a class="button" href="/logout">Logout</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSO demo</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+
+<body>
+<div class="card">
+    <div class="header">
+        <h1>SSO demo!</h1>
+    </div>
+    <div class="content">
+        <p>Conferences</p>
+        <th:block th:if="${error != null}">
+            <h3>Error</h3>
+            <p th:text="${error}"></p>
+        </th:block>
+        <th:block th:each="conference: ${conferences}">
+            <h3 th:text="${conference.get('name')}"></h3>
+            <p th:text="${conference.get('location')}"></p>
+        </th:block>
+    </div>
+    <div class="footer">
+        <a href="/" class="button">Back</a>
+    </div>
+</div>
+</body>
+</html>

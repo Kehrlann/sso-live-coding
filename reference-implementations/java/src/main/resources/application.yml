@@ -1,0 +1,20 @@
+server:
+  servlet:
+    session:
+      tracking-modes: cookie
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: ${SSO_CLIENT_ID}
+            client-secret: ${SSO_CLIENT_SECRET}
+            scope:
+              - openid
+              - email
+              - profile
+            client-name: Okta
+        provider:
+          okta:
+            issuer-uri: https://dev-51438889.okta.com
