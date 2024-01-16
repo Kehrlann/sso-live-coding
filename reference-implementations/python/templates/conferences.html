@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSO demo</title>
+    <link rel="stylesheet" href="/static/style.css"/>
+</head>
+
+<body>
+<div class="card">
+    <div class="header">
+        <h1>SSO demo!</h1>
+    </div>
+    <div class="content">
+        <p>Conferences</p>
+        {% if error != None %}
+        <h3>Error</h3>
+        <p>{{ error }}</p>
+        {% endif %}
+        
+        {% if conferences %}
+        {% for conference in conferences %}
+        <h3>{{ conference["name"] }}</h3>
+        <p>{{ conference["location"] }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="footer">
+        <a href="/" class="button">Back</a>
+    </div>
+</div>
+</body>
+</html>

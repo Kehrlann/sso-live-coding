@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSO demo</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+<div class="card">
+    <div class="header">
+        <h1>SSO demo!</h1>
+    </div>
+    <div class="content">
+        <p>Welcome, {{ username }} !</p>
+        <h3>Here's what we know about you:</h3>
+        <ul>
+            {% for attr_name, attr_value in attributes.items() %}
+            <li ><span style="font-weight: bold">{{ attr_name }}</span>: {{ attr_value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="footer">
+        <a href="/logout" class="button">Logout</a>
+    </div>
+</div>
+</body>
+</html>
