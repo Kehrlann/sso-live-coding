@@ -20,9 +20,10 @@ body {
 
 .header {
     background: #aaa;
-    background-image: url("https://devoxx.be/wp-content/uploads/2023/05/KEYNOTES-1.jpg");
-    background-position-y: center;
-    background-size: cover;
+    background-image: url("https://snowcamp.io/img/logo/SnowCampLogo500x500.png");
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: inline-block;
     width: 100%;
     color: white;
@@ -48,7 +49,8 @@ button, .button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    background: #722893;
+    background: #e5bb00;
+    color: #333 !important;
     font-weight: bold;
     text-decoration: none;
     color: white;
