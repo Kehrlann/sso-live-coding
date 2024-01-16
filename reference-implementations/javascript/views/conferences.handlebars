@@ -1,0 +1,17 @@
+<div class="content">
+    <p>Conferences</p>
+    {{# if error }}
+    <h3>Error</h3>
+    <p>{{error}}</p>
+    {{/if}}
+    
+    {{# if conferences }}
+    {{# each conferences }}
+    <h3>{{name}}</h3>
+    <p>{{location}}</p>
+    {{/each}}
+    {{/if}}
+</div>
+<div class="footer">
+    <a href="/" class="button">Back</a>
+</div>
