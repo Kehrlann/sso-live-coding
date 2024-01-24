@@ -27,7 +27,7 @@ tasks.withType<Test> {
 tasks.bootRun {
     val lines = File("../.env").readLines()
     for (line in lines) {
-        if (line.startsWith("#")) {
+        if (line.startsWith("#") || line.isBlank()) {
             continue
         }
         val parsedLine = line.split("=")
