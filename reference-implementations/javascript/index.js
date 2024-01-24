@@ -2,6 +2,7 @@ const uuid = require("uuid");
 const express = require("express");
 
 const app = express();
+const port = 3001;
 
 app.use(express.static("static"));
 app.use(
@@ -45,7 +46,7 @@ passport.use(
       userInfoURL: "https://dev-51438889.okta.com/oauth2/default/v1/userinfo",
       clientID: config.SSO_CLIENT_ID,
       clientSecret: config.SSO_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/oauth2/callback",
+      callbackURL: `http://localhost:${port}/oauth2/callback`,
       skipUserProfile: false,
       scope: "profile email",
     },
@@ -90,6 +91,6 @@ app.get(
   }
 );
 
-app.listen(3000, () => {
-  console.log(`Example app running at http://localhost:3000`);
+app.listen(port, () => {
+  console.log(`Example app running at http://localhost:${port}`);
 });
