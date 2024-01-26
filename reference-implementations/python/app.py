@@ -14,7 +14,7 @@ app.config["OIDC_CLIENT_SECRETS"] = {
         "client_id": config["SSO_CLIENT_ID"],
         "client_secret": config["SSO_CLIENT_SECRET"],
         "issuer": "https://dev-51438889.okta.com/oauth2/default",
-        "redirect_uris": ["https://localhost:5000/oauth2/callback"],
+        "redirect_uris": ["https://localhost:5001/authorize"],
         "token_uri": "https://dev-51438889.okta.com/oauth2/default/v1/token",
     }
 }
@@ -43,4 +43,4 @@ def login():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
