@@ -40,7 +40,13 @@ Software Engineer
 - <logos-twitter /> @Kehrlann
 - <logos-firefox /> https://garnier.wf/
 - <logos-github-icon /> github.com/Kehrlann/
-- <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
+- <fluent-emoji-flat-envelope-with-arrow /> daniel.garnier-moiroux@broadcom.com
+
+---
+layout: image
+hideInToc: true
+image: /snowcamp-sponsors.png
+---
 
 ---
 hideInToc: true
@@ -268,7 +274,7 @@ hideInToc: true
 - <logos-mastodon-icon /> @Kehrlann@hachyderm.io
 - <logos-twitter /> @Kehrlann
 - <logos-firefox /> https://garnier.wf/
-- <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
+- <fluent-emoji-flat-envelope-with-arrow /> daniel.garnier-moiroux@broadcom.com
 
 
 ---
