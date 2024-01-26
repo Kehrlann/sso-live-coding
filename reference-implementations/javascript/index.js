@@ -60,7 +60,6 @@ app.get("/", (req, res) => {
   if (!req.user) {
     res.render("anonymous");
   } else {
-    console.log(req.user);
     res.render("authenticated", {
       username: req.user.displayName,
       attributes: req.user,
@@ -86,10 +85,14 @@ app.get(
     failureMessage: true,
   }),
   (req, res) => {
-    console.log("callback");
     res.redirect("/");
   }
 );
+
+app.get("/failure", (req, res) => {
+  console.error(req.session.messages);
+  res.redirect("/");
+});
 
 app.listen(port, () => {
   console.log(`Example app running at http://localhost:${port}`);
