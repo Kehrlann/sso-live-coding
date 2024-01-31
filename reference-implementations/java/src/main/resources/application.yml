@@ -18,4 +18,4 @@ spring:
             client-name: Okta
         provider:
           okta:
-            issuer-uri: https://dev-51438889.okta.com
+            issuer-uri: https://dev-51438889.okta.com/oauth2/default
