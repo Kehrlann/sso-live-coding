@@ -70,7 +70,7 @@ public class HelloController {
     public String login(HttpServletRequest request) {
         var session = request.getSession(true);
         session.setAttribute("username", "Daniel");
-        request.getSession().setAttribute(
+        session.setAttribute(
                 "attributes",
                 Map.of(
                         "firstName", "Daniel",
