@@ -150,6 +150,12 @@ hideInToc: true
 
 ---
 layout: image
+image: /oauth-diagram.webp
+hideInToc: true
+---
+
+---
+layout: image
 image: /sso-3-high-level-authorization-code.png
 hideInToc: true
 ---
