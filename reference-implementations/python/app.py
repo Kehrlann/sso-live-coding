@@ -10,12 +10,12 @@ app.secret_key = uuid4().bytes
 
 app.config["OIDC_CLIENT_SECRETS"] = {
     "web": {
-        "auth_uri": "https://dev-51438889.okta.com/oauth2/default/v1/authorize",
+        "auth_uri": "https://accounts.google.com/o/oauth2/v2/auth",
         "client_id": config["SSO_CLIENT_ID"],
         "client_secret": config["SSO_CLIENT_SECRET"],
-        "issuer": "https://dev-51438889.okta.com/oauth2/default",
+        "issuer": "https://accounts.google.com",
         "redirect_uris": ["https://localhost:5001/authorize"],
-        "token_uri": "https://dev-51438889.okta.com/oauth2/default/v1/token",
+        "token_uri": "https://oauth2.googleapis.com/token",
     }
 }
 app.config["OIDC_SCOPES"] = "openid email profile"
