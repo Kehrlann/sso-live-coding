@@ -8,14 +8,14 @@ spring:
     oauth2:
       client:
         registration:
-          okta:
+          google:
             client-id: ${SSO_CLIENT_ID}
             client-secret: ${SSO_CLIENT_SECRET}
             scope:
               - openid
               - email
               - profile
-            client-name: Okta
-        provider:
-          okta:
-            issuer-uri: https://dev-51438889.okta.com/oauth2/default
+            client-name: Google
+        provider: # this is optional because Spring Boot and Security know about Google
+          google:
+            issuer-uri: https://accounts.google.com
