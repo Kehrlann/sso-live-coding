@@ -39,11 +39,11 @@ const OpenIDConnectStrategy = require("passport-openidconnect");
 passport.use(
   new OpenIDConnectStrategy(
     {
-      issuer: "https://dev-51438889.okta.com/oauth2/default",
+      issuer: "https://accounts.google.com",
       authorizationURL:
-        "https://dev-51438889.okta.com/oauth2/default/v1/authorize",
-      tokenURL: "https://dev-51438889.okta.com/oauth2/default/v1/token",
-      userInfoURL: "https://dev-51438889.okta.com/oauth2/default/v1/userinfo",
+        "https://accounts.google.com/o/oauth2/v2/auth",
+      tokenURL: "https://oauth2.googleapis.com/token",
+      userInfoURL: "https://openidconnect.googleapis.com/v1/userinfo",
       clientID: config.SSO_CLIENT_ID,
       clientSecret: config.SSO_CLIENT_SECRET,
       callbackURL: `http://localhost:${port}/oauth2/callback`,
