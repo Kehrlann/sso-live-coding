@@ -6,7 +6,7 @@ body {
 }
 
 .card {
-    border: 1px solid #bbb;
+    border: 1px solid #3FC380;
     border-radius: 5px;
     overflow: hidden;
 
@@ -19,11 +19,7 @@ body {
 }
 
 .header {
-    background: #aaa;
-    background-image: url("https://snowcamp.io/img/logo/SnowCampLogo500x500.png");
-    background-position: right;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: #3FC380;
     display: inline-block;
     width: 100%;
     color: white;
@@ -49,8 +45,8 @@ button, .button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    background: #e5bb00;
-    color: #333 !important;
+    background: #3FC380;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     color: white;
