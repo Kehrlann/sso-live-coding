@@ -3,17 +3,17 @@
   "private": true,
   "scripts": {
     "build": "slidev build --base /sso-live-coding/",
-    "dev": "slidev --open",
+    "dev": "slidev --open --remote",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.40.16",
+    "@slidev/cli": "^0.47.0",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
   "devDependencies": {
     "@iconify-json/fluent-emoji-flat": "^1.1.11",
-    "@iconify-json/logos": "^1.1.29",
+    "@iconify-json/logos": "^1.2.3",
     "playwright-chromium": "^1.36.0"
   }
 }
