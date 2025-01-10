@@ -37,9 +37,9 @@ class: smaller
 ### Garnier-Moiroux
 <br>
 
-Software Engineer @ Broadcom
+Software Engineer
 
-- <logos-spring-icon /> Spring + Tanzu
+- <logos-spring-icon /> Spring
 - <logos-bluesky /> @garnier.wf
 - <logos-firefox /> https://garnier.wf/
 - <logos-github-icon /> github.com/Kehrlann/
@@ -265,7 +265,7 @@ hideInToc: true
 ### **https://github.com/Kehrlann/sso-live-coding**
 
 <!-- ouch the hack -->
-<!-- https://mobile.devoxx.com/events/dvbe23/talks/2943/details -->
+<!-- https://mobile.devoxx.com/events/vdcern25/rate-talk/3276 -->
 <div style="float:right; margin-right: 50px; text-align: center;">
   <img src="/qr-code.png" style="margin-bottom: -45px; margin-top: -15px;" >
 </div>
