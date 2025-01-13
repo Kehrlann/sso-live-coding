@@ -9,6 +9,7 @@ css: unocss
 aspectRatio: "16/9"
 colorSchema: "light"
 canvasWidth: 1024
+hideInToc: true
 ---
 
 # **Live-coding SSO**
@@ -28,7 +29,7 @@ TODO: splash image
 
 ---
 layout: image-right
-image: /daniel-intro.webp
+image: /daniel-intro.jpg
 hideInToc: true
 class: smaller
 ---
