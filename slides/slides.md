@@ -20,7 +20,7 @@ hideInToc: true
 
 ### Daniel Garnier-Moiroux
 
-Voxxed CERN, 2025-01-15
+Voxxed Zürich, 2025-03-25
 
 <!-- 
 presenter notes go here
