@@ -67,7 +67,7 @@ public class HelloController {
                 Map.of(
                         "firstName", "Daniel",
                         "lastName", "Garnier-Moiroux",
-                        "company", "Broadcom",
+                        "team", "Spring",
                         "userType", "hardcoded"
                 )
         );

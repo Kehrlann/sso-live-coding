@@ -41,7 +41,7 @@ app.post("/login", (req, res) => {
   session.attributes = {
     firstName: "Daniel",
     lastName: "Garnier-Moiroux",
-    company: "Broadcom",
+    team: "Spring",
     userType: "hardcoded"
   };
   res.redirect("/");

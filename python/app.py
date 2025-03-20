@@ -45,7 +45,7 @@ def login():
     session["attributes"] = {
         "firstName": "Daniel",
         "lastName": "Garnier-Moiroux",
-        "company": "Broadcom",
+        "team": "Spring",
         "userType": "hardcoded",
     }
     return redirect(url_for("hello"))
