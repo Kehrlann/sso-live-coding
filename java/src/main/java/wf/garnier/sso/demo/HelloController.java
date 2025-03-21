@@ -115,8 +115,4 @@ public class HelloController {
         return objectMapper.readValue(body, Map.class);
     }
 
-    private String getCredentials() {
-        var credsString = "%s:%s".formatted(clientId, clientSecret);
-        return Base64.getUrlEncoder().encodeToString(credsString.getBytes());
-    }
 }
