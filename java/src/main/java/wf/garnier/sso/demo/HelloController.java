@@ -1,12 +1,13 @@
 package wf.garnier.sso.demo;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -90,14 +91,9 @@ public class HelloController {
         var response = this.restClient
                 .post()
                 .uri(tokenUri)
-                .header("Authorization", "Basic " + getCredentials())
-                .body(
-                        Map.of(
-                                "redirect_uri", REDIRECT_URI,
-                                "grant_type", "authorization_code",
-                                "code", code
-                        )
-                )
+                .headers(h -> h.setBasicAuth(clientId, clientSecret))
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .body("code=%s&redirect_uri=%s&grant_type=authorization_code".formatted(code, REDIRECT_URI))
                 .retrieve()
                 .body(String.class);
         var body = this.objectMapper.readValue(response, Map.class);
