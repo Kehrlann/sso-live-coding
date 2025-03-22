@@ -266,7 +266,7 @@ hideInToc: true
 ### **https://github.com/Kehrlann/sso-live-coding**
 
 <!-- ouch the hack -->
-<!-- https://mobile.devoxx.com/events/vdcern25/rate-talk/3276 -->
+<!-- https://mobile.devoxx.com/events/vdz25/rate-talk/1916 -->
 <div style="float:right; margin-right: 50px; text-align: center;">
   <img src="/qr-code.png" style="margin-bottom: -45px; margin-top: -15px;" >
 </div>
