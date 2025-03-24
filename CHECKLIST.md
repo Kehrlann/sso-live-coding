@@ -5,4 +5,7 @@
 - [ ] Slides running
 - [ ] License server ON
 - [ ] JB's Fleet up to date
+- [ ] Firefox logged in
+- [ ] Unlock 1p
+
 
