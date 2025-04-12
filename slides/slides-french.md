@@ -1,25 +1,26 @@
 ---
 theme: default
-class: 'text-center'
-highlighter: shiki
+class: "text-center"
+highlighter: prism
 lineNumbers: true
 transition: none
 # use UnoCSS
 css: unocss
 aspectRatio: "16/9"
 colorSchema: "light"
+canvasWidth: 1024
 hideInToc: true
 ---
 
-# SSO en live-coding
-## (sans framework)
+# OAuth2 & OpenID
+## Sous le capot
 
 <br>
 <br>
 
 ### Daniel Garnier-Moiroux
 
-SnowCamp, 2024-02-01
+Devoxx France, 2025-04-16
 
 
 ---
@@ -35,12 +36,11 @@ class: smaller
 
 Software Engineer
 
-- <logos-spring-icon /> Broadcom+Tanzu+Spring
-- <logos-mastodon-icon /> @Kehrlann@hachyderm.io
-- <logos-twitter /> @Kehrlann
+- <logos-spring-icon /> Spring
+- <logos-bluesky /> @garnier.wf
 - <logos-firefox /> https://garnier.wf/
 - <logos-github-icon /> github.com/Kehrlann/
-- <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
+- <fluent-emoji-flat-envelope-with-arrow /> contact@garnier.wf
 
 ---
 hideInToc: true
@@ -143,6 +143,18 @@ hideInToc: true
 ---
 
 ---
+hideInToc: true
+---
+
+<img src="/sso-oauth-diagram.jpg" style="width: 800px; text-align:center;" />
+
+---
+hideInToc: true
+---
+
+<img src="/sso-oauth-diagram-waldo.jpg" style="width: 800px; text-align:center;" />
+
+---
 layout: image
 image: /sso-3-high-level-authorization-code.png
 hideInToc: true
@@ -171,6 +183,15 @@ layout: image
 image: /sso-6-just-sso.png
 hideInToc: true
 ---
+
+---
+layout: center
+title: Live-coding
+---
+
+# ~~~ Let's code!
+
+<img src="/cat-code.gif" style="width: 600px; text-align:center;" />
 
 ---
 layout: center
@@ -231,12 +252,6 @@ hideInToc: true
 ---
 
 ---
-layout: image
-image: /sso-13-access-token.png
-hideInToc: true
----
-
----
 layout: image-right
 image: /safety-cat.jpg
 hideInToc: true
@@ -258,17 +273,16 @@ hideInToc: true
 ### **https://github.com/Kehrlann/sso-live-coding**
 
 <!-- ouch the hack -->
-<!-- https://mobile.devoxx.com/events/dvbe23/talks/2943/details -->
+<!-- https://mobile.devoxx.com/events/devoxxfr2025/rate-talk/50283 -->
 <div style="float:right; margin-right: 50px; text-align: center;">
   <img src="/qr-code.png" style="margin-bottom: -45px; margin-top: -15px;" >
 </div>
 
 <br>
 
-- <logos-mastodon-icon /> @Kehrlann@hachyderm.io
-- <logos-twitter /> @Kehrlann
+- <logos-bluesky /> @garnier.wf
 - <logos-firefox /> https://garnier.wf/
-- <fluent-emoji-flat-envelope-with-arrow /> dgarnier@vmware.com
+- <fluent-emoji-flat-envelope-with-arrow /> contact@garnier.wf
 
 
 ---
