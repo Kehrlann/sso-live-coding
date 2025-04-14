@@ -262,6 +262,23 @@ hideInToc: true
 <br>Ne faites pas ça! Utilisez une lib.
 
 ---
+layout: two-cols
+hideInToc: true
+---
+
+### **OAUTH 2.1 expliqué simplement**
+### **(même si tu n'es pas dev) !**
+
+Julien Topçu, Devoxx 2023
+
+<img src="/qr-code-talk-julien.png" style="height: 200px; margin-left: 50px;">
+
+::right::
+
+<img src="/julien-topcu-oauth2.png">
+
+
+---
 layout: default
 hideInToc: true
 ---
