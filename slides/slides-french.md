@@ -189,15 +189,6 @@ layout: center
 title: Live-coding
 ---
 
-# ~~~ Let's code!
-
-<img src="/cat-code.gif" style="width: 600px; text-align:center;" />
-
----
-layout: center
-title: Live-coding
----
-
 # ~~~ Du code!
 
 <img src="/cat-code.gif" style="width: 600px; text-align:center;" />
