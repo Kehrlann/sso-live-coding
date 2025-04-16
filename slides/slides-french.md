@@ -292,6 +292,24 @@ hideInToc: true
 - <logos-firefox /> https://garnier.wf/
 - <fluent-emoji-flat-envelope-with-arrow /> contact@garnier.wf
 
+---
+layout: default
+class: smaller
+hideInToc: true
+---
+
+# Spring team talks
+
+&nbsp;
+
+- **Null Safety en Java avec JSpecify et NullAway** (Tools-in-Action)
+    - Sébastien Deleuze, Mercredi, 17:50, Neuilly 252AB
+- **Optimisez vos applications Spring Boot avec CDS et Project Leyden**
+    - Sébastien Deleuze, Jeudi, 14:35, Amphi Bleu
+- **BOF Spring**
+    - Sébastien & Daniel, Jeudi, 20:00, Paris 241
+- **Tester les apps Spring Boot, sous toutes les coutures** (Deep Dive)
+    - Daniel, Vendredi, 13:30, Paris 141
 
 ---
 layout: image
